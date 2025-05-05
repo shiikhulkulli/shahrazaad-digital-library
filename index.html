@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShahraZaad Digital Library</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="stylesheet" href="css/books.css"/>
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo" onclick="loadPage('home.html')">ShahraZaad Digital Library</div>
+      <div class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars" id="open-icon"></i>
+        <i class="fa-solid fa-xmark hidden" id="close-icon"></i>
+      </div>     
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#" onclick="loadPage('home.html')">Home</a></li>
+        <li><a href="#" onclick="loadPage('books.html')">Books</a></li>
+        <li><a href="#" onclick="loadPage('categories.html')">Categories</a></li>
+        <li><a href="#" onclick="loadPage('suggest.html')">Suggest a Book</a></li>
+        <li><a href="#" onclick="loadPage('blog.html')">Blog</a></li>
+        <li><a href="#" onclick="loadPage('contact.html')">Contact</a></li>
+        <li><a><button id="dark-mode-toggle" class="btn">🌙 Dark Mode</button></a></li>
+        
+
+        <!-- <li class="auth-menu"><a href="login.html" id="auth-link">Login/Register</a></li> -->
+      </ul>
+    </nav>
+  </header>
+
+  <div id="content">
+          
+  </div>
+  <footer>
+    <div class="footer-container">
+        <div class="footer-column">
+            <!-- <img src="assets/images/logo-white.png" alt="ShahraZaad Digital Library" class="footer-logo"> -->
+            <div class="footer-Logo">ShahraZaad Digital Library</div>
+            <p>Your gateway to knowledge and Somali literature</p>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://x.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#" onclick="loadPage('home.html')">Home</a></li>
+              <li><a href="#" onclick="loadPage('books.html')">All Books</a></li>
+              <li><a href="#" onclick="loadPage('categories.html')">Categories</a></li>
+              <li><a href="#" onclick="loadPage('suggest.html')">Suggest a Book</a></li>
+              <li><a href="#" onclick="loadPage('blog.html')">Blog</a></li>
+              <li><a href="#" onclick="loadPage('contact.html')">Contact</a></li>    
+            </ul>
+        </div>
+
+       
+
+
+        <div class="footer-column">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Contact</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Muqdisho, Soomaaliya</p>
+            <p><i class="fas fa-envelope"></i> admin@shahrazaad.so</p>
+            <p><i class="fas fa-phone"></i> +25261052825</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 ShahraZaad Digital Library. All rights reserved</p>
+    </div>
+</footer>
+<script defer src="js/main.js"></script>
+
+</body>
+</html>
