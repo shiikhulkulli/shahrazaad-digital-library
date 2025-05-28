@@ -105,7 +105,8 @@ const books = [
         author: "Hal Elrod", 
         category: "Self Development", 
         image: "assets/images/Miracle Morning.png", 
-        pdf: "https://drive.google.com/file/d/152GETsYNsYP1w4q_wJFlLEPwLEyeX0Hz/view?usp=sharing" 
+        pdf:"assets/AF-DHAAB.pdf"
+        // pdf: "https://drive.google.com/file/d/152GETsYNsYP1w4q_wJFlLEPwLEyeX0Hz/view?usp=sharing" 
     },
     { 
         title: "Atomic Habits", 

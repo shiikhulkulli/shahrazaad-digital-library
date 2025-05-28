@@ -178,6 +178,9 @@ body.dark-mode {
   #contact{
     background-color: #2f4040;
   }
+  #midab-sii{
+    color: white;
+  }
   ::placeholder {
     color: white;
   }
