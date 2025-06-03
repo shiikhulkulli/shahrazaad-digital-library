@@ -74,13 +74,13 @@ The project is continuously evolving. Upcoming features include:
 > 💡 Make sure to upload images to your repo and update these paths accordingly.
 
 ### 🔹 Homepage  
-![Homepage Screenshot](./images/homepage.png)
+![Homepage Screenshot](./assets/images/homepage.png)
 
 ### 🔹 Books Section  
-![Books Section Screenshot](./images/books.png)
+![Books Section Screenshot](./assets/images/books.png)
 
 ### 🔹 Categories Section  
-![Categories Screenshot](./images/categories.png)
+![Categories Screenshot](./assets/images/categories.png)
 
 ---
 
@@ -93,4 +93,3 @@ Special thanks to:
 - 💻 Online learnin
 =======
 
->>>>>>> 77b9f5d6fc6140223ffb285f7e8afd57ba4c01da
