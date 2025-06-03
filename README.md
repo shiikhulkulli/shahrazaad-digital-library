@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📚 ShahraZaad Digital Library
 
 > **"Your bridge to the world of Somali literature and global knowledge."**
@@ -90,3 +91,6 @@ Special thanks to:
 - 👨‍🏫 My instructors and mentors for their continuous guidance  
 - 🌍 Open-source communities for tools and inspiration  
 - 💻 Online learnin
+=======
+
+>>>>>>> 77b9f5d6fc6140223ffb285f7e8afd57ba4c01da
