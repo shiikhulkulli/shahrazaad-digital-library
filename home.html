@@ -9,8 +9,8 @@
   </section>
   <h1 id="mrb">Most reading Books 📚</h1>
 
-  <section class="book-grid-mrb">
-      <div class="mrb-grid">
+  <section id="book-grid-mrb" class="book-grid-mrb">
+      <!-- <div class="mrb-grid">
         <div class="book-card">
           <img class="book-cover" src="assets/images/aanadii nageeye.jpg" alt="">
           <h3>Magaca: Aanadii Nageeye</h3>
@@ -63,5 +63,34 @@
           <p>Category: Self Development</p>
 
         </div>
-    </div>
+    </div> -->
+  
   </section>
+
+
+  <div id="book-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <img id="modal-book-image" src="" alt="Book Cover" />
+      <h2 id="modal-book-title"></h2>
+      <h3 id="modal-book-author"></h3>
+      <p id="modal-book-category"></p>
+      <p id="modal-book-dec"></p>
+      <div class="book-actions actionss">
+        <button id="modal-read-btn" class="btn readanddownload">Read Online</button>
+        <button id="modal-download-btn" class="btn readanddownload">Download</button>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+  <script defer src="js/main.js"></script>

@@ -152,6 +152,79 @@ body {
   transform: translateY(-5px);
 }
 
+/* the model  style */
+
+.modal {
+  display: flex;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  justify-content: center; align-items: center;
+  /* background-color: rgba(0, 0, 0, 0.6); */
+  background:red;
+  z-index: 999;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+#book-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Modal Content */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  height: auto;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+/* Fixed image size */
+#modal-book-image {
+  width: 90%;
+  height: 300px;
+  object-fit: cover;
+  margin-left: 30px;
+}
+
+/* Close Button */
+.close-modal {
+  position: absolute;
+  top: -5px;
+  right: 15px;
+  font-size: 30px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+.actionss{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.readanddownload{
+  width: 30%;
+  font-size: 0.85rem;
+}
+
+
+
+
 .book-cover {
   width: 70%;
   height: auto;
@@ -249,6 +322,16 @@ body.dark-mode {
   .blog-section h2, p{
     color: white;
   }
+  .close-modal{
+    color: #e85c5c;
+  }
+  .modal-content{
+    background: #2f4040;
+  }
+  .modal-content .book-actions .btn{
+    background: #e85c5c;
+  }
+
 }
 
 .dark-mode .book-card {

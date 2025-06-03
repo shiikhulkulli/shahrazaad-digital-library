@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const content = document.getElementById('content');
+    // renderBooks()
 
     // const menuIcon = document.querySelector('.menu-icon');
     // const sidebar = document.getElementById('sidebar');
@@ -48,6 +49,28 @@ document.addEventListener("DOMContentLoaded", function () {
     //         content.classList.remove('shift');
     //     });
     // });
+    loadPage('home.html');
+    // document.addEventListener("DOMContentLoaded", function () {
+      
+    //   });
+//     const modal = document.getElementById("book-modal");
+//   const modalContent = document.querySelector(".modal-content");
+//   const closeModalBtn = document.querySelector(".close-modal");
+
+//   if (closeModalBtn) {
+//     closeModalBtn.addEventListener("click", () => {
+//       modal.classList.add("hidden");
+//     });
+//   }
+
+// //   Close when clicking outside modal content
+//   modal.addEventListener("click", (event) => {
+//     if (!modalContent.contains(event.target)) {
+//       modal.classList.add("hidden");
+//     }
+//   });
+
+  
 
 });
 
@@ -89,6 +112,12 @@ function loadPage(page) {
         if (page === 'books.html') {
             initBooksPage();
         }
+        if (page === 'home.html') {
+            renderBooks(); 
+            bindModalEvents();
+
+            
+          }
       })
       .catch(error => {
         contentDiv.innerHTML = "<p>Error loading page.</p>";
@@ -105,8 +134,8 @@ const books = [
         author: "Hal Elrod", 
         category: "Self Development", 
         image: "assets/images/Miracle Morning.png", 
-        pdf:"assets/AF-DHAAB.pdf"
-        // pdf: "https://drive.google.com/file/d/152GETsYNsYP1w4q_wJFlLEPwLEyeX0Hz/view?usp=sharing" 
+        pdf:"assets/AF-DHAAB.pdf",
+        pdf: "https://drive.google.com/file/d/152GETsYNsYP1w4q_wJFlLEPwLEyeX0Hz/view?usp=sharing" 
     },
     { 
         title: "Atomic Habits", 
@@ -217,6 +246,8 @@ const books = [
    
 ];
 
+  
+
 // displaying the books on the DOM
 function displayBooks(booksArray) {
     const bookGrid = document.querySelector(".book-grid");
@@ -297,6 +328,132 @@ function initBooksPage() {
         });
     }
 }
-window.onload = () => {
-    loadPage('home.html');
-}  
+
+
+const mostReadBooks = [
+    {
+      title: "Aanadii Nageeye",
+      author: "Ibraahin Hawd",
+      category: "Sheeko faneed",
+      image: "assets/images/aanadii nageeye.jpg",
+      description:"'Aanadii Nageeye' waa buug ka hadlaya xaaladaha nololeed, dhaqan iyo siyaasad ee bulshada Soomaaliyeed xilligii Jamhuuriyadda. Qoraagu wuxuu si qoto dheer u falanqeeyaa dhacdooyin taariikhi ah isagoo adeegsanaya af-soomaali hodan ah",
+      pdf: "https://drive.google.com/file/d/152GETsYNsYP1w4q_wJFlLEPwLEyeX0Hz/view?usp=drive_link" 
+    },
+    {
+      title: "Reach dad poor dad",
+      author: "Robert Kiyosaki",
+      category: "Finance",
+      description: "this book contrasts two approaches to money and investing—one from his educated but financially struggling father, and one from his wealthy mentor. The book emphasizes financial education, asset-building, and thinking differently about wealth",
+      image: "assets/images/rich-dad-poor-dad2.jpg",
+      pdf: "https://drive.google.com/file/d/1yWbm55vuNe9_XpmsKTMdoEob7_r3f4bu/view?usp=drive_link"
+    },
+    {
+      title: "Dhambaallada Quraanka",
+      author: "Adham sharqaawi",
+      category: "Diini",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6Fy_2-46AEiKFD4PjfeOIqIY9CY7hsIQx3xSTDDDLtbtswaUOYTno1tLKiTzMsb02cVY&usqp=CAU"
+    },
+    {
+      title: "Naftaydaay Gacalo",
+      author: "Cula Dayuub",
+      category: "Naf la hadal",
+      image: "assets/images/Naftaydaay Gacalo.jpg"
+    },
+    {
+      title: "Mucjisada-Aroortii",
+      author: "Hal Elrod",
+      category: "Self Development",
+      image: "assets/images/Mucjisada-Aroortii.jpg"
+    },
+    {
+      title: "Yaa Qaatay Burcadkaygii",
+      author: "Dr Spencer Johnson",
+      category: "Self Development",
+      image: "assets/images/Yaa_Qaatay_Burcadkaygii.jpg"
+    }
+  ];
+function renderBooks() {
+    const grid = document.querySelector('#book-grid-mrb');
+    if (!grid) {
+        console.warn("Could not find #book-grid-mrb");
+        return;
+    }
+
+    mostReadBooks.forEach(book => {
+        const card = document.createElement('div');
+        card.className = 'mrb-grid';
+        card.innerHTML = `
+            <div class="book-card">
+                <img class="book-cover" src="${book.image}" alt="${book.title}">
+                <h3>Magaca: ${book.title}</h3>
+                <h4>Qoraa: ${book.author}</h4>
+                <p>Category: ${book.category}</p>
+            </div>
+        `;
+        card.addEventListener("click", () => {
+            openBookModal(book);
+          });
+
+        grid.appendChild(card);
+     
+    });
+
+      
+}
+function openBookModal(book) {
+    const modal = document.getElementById("book-modal");
+    document.getElementById("modal-book-image").src = book.image;
+    document.getElementById("modal-book-title").textContent = book.title;
+    document.getElementById("modal-book-author").textContent = `Author: ${book.author}`;
+    document.getElementById("modal-book-category").textContent = `Category: ${book.category}`;
+    document.getElementById("modal-book-dec").textContent = `description: ${book.description}`;
+  
+    const readBtn = document.getElementById("modal-read-btn");
+    const downloadBtn = document.getElementById("modal-download-btn");
+  
+    readBtn.onclick = () => window.open(book.pdf, "_blank");
+    downloadBtn.onclick = () => {
+      const link = document.createElement("a");
+      link.href = book.pdf;
+      link.download = `${book.title}.pdf`;
+      link.click();
+    };
+  
+    modal.classList.remove("hidden");
+  }
+//   bind function
+
+  function bindModalEvents() {
+    const modal = document.getElementById("book-modal");
+    const modalContent = document.querySelector(".modal-content");
+    const closeModalBtn = document.querySelector(".close-modal");
+
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener("click", () => {
+            modal.classList.add("hidden");
+        });
+    }
+
+    if (modal) {
+        modal.addEventListener("click", (event) => {
+            if (!modalContent.contains(event.target)) {
+                modal.classList.add("hidden");
+
+            }
+        });
+    }
+    
+}
+
+  
+//   document.querySelector(".close-modal").addEventListener("click", () => {
+//     document.getElementById("book-modal").classList.add("hidden");
+//   });
+  
+
+  
+//   document.addEventListener('DOMContentLoaded', renderBooks);
+  
+// window.onload = () => {
+    // loadPage('home.html');
+// }  
